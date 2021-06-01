@@ -7,7 +7,7 @@ FreeUI是一款轻量、实用的UI组件库。目前只编写了`微信小程�
 
 打开微信，扫码快速预览
 
-<div align="left"><image src="https://imgtu.com/i/2nN0yt" width="200" height="200"> </image></div>
+<div align="left"><image src="https://z3.ax1x.com/2021/06/01/2nN0yt.jpg" width="200" height="200"> </image></div>
 
 ##### 链接
 
@@ -30,8 +30,8 @@ FreeUI是一款轻量、实用的UI组件库。目前只编写了`微信小程�
 如果FreeUI对您的工作或者学习有所帮助，您可以捐赠FreeUI的研发工作，捐赠无门槛，哪怕是一瓶肥宅快乐水，也可以帮助我多敲半小时代码。
 
 <div style="display:flex;">
-	<div align="center"><image src="https://imgtu.com/i/2nNdSA" width="300" height="300"> </image><div>打开微信扫一扫</div></div>
-	<div style="margin-left:50px;" align="center"><image src="https://imgtu.com/i/2nNBOP" width="300" height="300"> </image><div>打开支付宝扫一扫</div></div>
+	<div align="center"><image src="https://z3.ax1x.com/2021/06/01/2nNdSA.jpg" width="300" height="300"> </image><div>打开微信扫一扫</div></div>
+	<div style="margin-left:50px;" align="center"><image src="https://z3.ax1x.com/2021/06/01/2nNBOP.png" width="300" height="300"> </image><div>打开支付宝扫一扫</div></div>
 </div>
 
 

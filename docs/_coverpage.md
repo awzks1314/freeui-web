@@ -20,8 +20,8 @@
 
 FreeUI 是一款适用于微信原生开发的组件库，可以帮助开发者快速进行小程序开发。
 
-[GitHub](https://github.com/jackson0714/PassJava-Learning)
-[Get Started](README.md)
+[GitHub](https://github.com/awzks1314/Free-UI)
+[开始](README.md)
 
 <!-- ![color](#0081ef) -->
 
