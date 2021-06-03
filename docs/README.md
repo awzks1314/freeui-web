@@ -11,6 +11,8 @@ FreeUI是一款轻量、实用的UI组件库。目前只编写了`微信小程�
 
 #### 链接
 
+- 文档地址(正在编写中): [https://awzks1314.github.io/freeui-web/#/](https://awzks1314.github.io/freeui-web/#/)
+
 - github地址: [https://github.com/awzks1314/Free-UI](https://github.com/awzks1314/Free-UI)
 
 - gitee地址：[https://gitee.com/zkszz/free-ui](https://gitee.com/zkszz/free-ui)

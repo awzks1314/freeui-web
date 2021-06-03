@@ -11,7 +11,7 @@
 	{
 	  "navigationBarTitleText":"FreeUI组件库",
 	  "usingComponents": {
-		"free-tag":"/components/basic/free-tag/free-tag"
+		"free-list":"/components/module/free-list/free-list"
 	  }
 	}
 ```
@@ -21,88 +21,67 @@
 **默认用法**
 
 ```html
-	<free-tag 
-	    type="{{type}}"
-	    size="{{size}}"
-	    radius="{{radius}}" 
-	    effect="{{effect}}"
-	    icon="{{icon}}"
-	    iconColor="{{iconColor}}"
-	  >默认标签</free-tag>
+	<free-list 
+	    arrow="true" 
+	    icon="home" 
+	    title="默认标题"
+	    >
+	</free-list>
 ```
 
-**标签颜色**
+**右侧箭头**
 
-`type`属性用来表示颜色，默认`blue`
+`arrow`属性用来表示右侧有无箭头,默认`false`
 ```html
-	<free-tag type="blue">默认标签</free-tag>
+	<free-list arrow title="有箭头"></free-list>
+	<free-list arrow="{{false}}"   title="无箭头"></free-list>
 ```
 
-**标签大小**
+**左侧图标/图片**
 
-`size`属性用来表示标签大小
+`icon`表示左侧图标；`iconColor`表示图标颜色；`image`表示是图片还是icon，默认为`false`
 ```html
-	<free-tag >默认标签</free-tag>
-	<free-tag size="sm">默认标签</free-tag>
+	<free-list icon="home" title="默认标题"></free-list>
+	<free-list icon="home" iconColor="#0081ef" title="默认标题"></free-list>
+	<free-list icon="/static/images/my/dog.jpg" image title="默认标题"></free-list>
 ```
-**标签圆角**
 
-`radius`属性用来表示标签圆角，默认`5000rpx`,圆角
+**大小**
+
+`size`属性用来表示标题字体大小、图标大小，默认28rpx
 ```html
-	<free-tag >默认标签</free-tag>
-	<free-tag radius="10rpx">默认标签</free-tag>
-	<free-tag radius="30rpx">默认标签</free-tag>
+	<free-list  title="默认标题"></free-list>
+	<free-list  title="默认标题" size="32"></free-list>
 ```
-
-**标签主题**
-
-`effect`属性用来表示标签主题，默认`dark`，可选`dark`/`light`/`plain`
-```html
-	<free-tag effect="dark">默认标签</free-tag>
-	<free-tag effect="light">默认标签</free-tag>
-	<free-tag effect="plain">默认标签</free-tag>
-```
-
-**标签图标**
-
-`icon`属性用来给标签加图标，`iconColor`表示图标的颜色，可选图标为内置图标
-```html
-	<free-tag icon="home">默认标签</free-tag>
-	<free-tag icon="home" iconColor="#000">默认标签</free-tag>
-```
-
 **Props**
 
 | 参数     | 说明                                                   | 类型          | 默认值      | 可选值 |
 | -------- | ------------------------------------------------------ | ------------- | ----------- | ------ |
-| type   | 标签的颜色                                               | String        | -      | 见下表      |
-| radius      | 标签圆角                                           | String        | 5000rpx           | -      |
-| padding   |  标签内边距                | String         | -           | -      |
-| shadow     | 标签阴影                                   | Boolean        | true | - |
-| size    | 标签大小                                              | String        | -      | sm      |
-| effect   | 标签主题| String        | dark      | dark/light/plain      |
-| icon   | 图标名字                                               | String        | -      | 内置icon图标      |
-| iconColor   | 图标颜色                                               | String        | #fff      | -      |
+| title   | 标题名称                                               | String        | -      | -      |
+| color   | 标题颜色                                               | String        | #333      | -      |
+| sub   | 副标题                                               | String        | -      | -      |
+| arrow      | 右侧箭头                         | Boolean       | false           | -      |
+| icon   |  图标                | String         | -           | -      |
+| iconColor     | 图标颜色                                   | String        | - | - |
+| image     | false表示内置图标，true表示引用图片            | Boolean        | false | - |
+| size     | 图标及标题大小，单位rpx                                   | Number        | 28 | - |
+| padding    | 列表内边距                                    | String        | 28rpx 30rpx      |       |
+| bgcolor   | 背景颜色| String        | #fff      | -     |
+| last   | 最后一条数据隐藏底部线条                       | Boolean        | false      |      |
+| lineLeft   | 左边线条收缩                       | Boolean        | true      |      |
+| lineRight   | 右边线条收缩                       | Boolean        | true      |      |
 
-**type的取值**
+**Slots**
 
-| 参数         | 默认值                                                      | 值                                                      |
-| ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 嫣红  | red | #e54d42 |
-| 桔橙    | orange | #f37b1d |
-| 明黄   | yellow | #fbbd08 |
-| 橄榄     | olive | #8dc63f |
-| 森绿    | green | #39b54a |
-| 天青          | cyan | #1cbbb4 |
-| 海蓝       | blue | #0081ff |
-| 姹紫       | purple | #6739b6 |
-| 木槿         | mauve | #9c26b0 |
-| 桃粉        | pink | #e03997 |
-| 棕褐     | brown | #a5673f |
-| 玄灰    | grey | #8799a3 |
-| 草灰  | gray | #aaaaaa |
-| 墨黑 | black | #333333 |
-| 雅白 | white | #ffffff |
+| 名称     | 说明                                                   |
+| -------- | ------------------------------------------------------ | 
+| default      | 右侧自定义内容展示                          |             
+
+**Events**
+
+| 事件名称     | 说明                                                   | 回调参数      |
+| -------- | ------------------------------------------------------ | ------------- |
+| click      | 时间点击时触发                          | -  |                
 
 #### 预览
 

@@ -11,7 +11,7 @@
 	{
 	  "navigationBarTitleText":"FreeUI组件库",
 	  "usingComponents": {
-		"free-tag":"/components/basic/free-tag/free-tag"
+		"free-list-grid":"/components/module/free-list-grid/free-list-grid"
 	  }
 	}
 ```
@@ -21,88 +21,71 @@
 **默认用法**
 
 ```html
-	<free-tag 
-	    type="{{type}}"
-	    size="{{size}}"
-	    radius="{{radius}}" 
-	    effect="{{effect}}"
-	    icon="{{icon}}"
-	    iconColor="{{iconColor}}"
-	  >默认标签</free-tag>
+	<free-list-grid 
+		list="{{gridList}}" 
+		col="{{col}}" 
+		row="{{row}}"
+		border="{{border}}"
+		radius="{{radius}}"
+		isSwiper="{{isSwiper}}"
+		swiperHeight="{{swiperHeight}}"
+		bind:click='onClick'
+	></free-list-grid>
 ```
 
-**标签颜色**
+**几行几列**
 
-`type`属性用来表示颜色，默认`blue`
+`col`表示列数,默认`4`；`row`表示列数,默认`2`；`list`表示list数组
 ```html
-	<free-tag type="blue">默认标签</free-tag>
+	  <free-list-grid list="{{gridList}}" col="4" row="3"></free-list-grid>
 ```
 
-**标签大小**
+**边框**
 
-`size`属性用来表示标签大小
+`border`表示边框，默认为false
 ```html
-	<free-tag >默认标签</free-tag>
-	<free-tag size="sm">默认标签</free-tag>
+	  <free-list-grid list="{{gridList}}" border></free-list-grid>
+	  <free-list-grid list="{{gridList}}" ></free-list-grid>
 ```
-**标签圆角**
 
-`radius`属性用来表示标签圆角，默认`5000rpx`,圆角
+**图片大小、圆角**
+
+`width`表示默认图片宽度,默认`60`rpx；`height`表示默认图片高度,默认`60rpx`；`radius`表示图片圆角，默认`10`rpx；`list`数组里定义图片宽高
+<br>
+如果你不想在list里面定义图片的宽高，可以使用默认宽高
 ```html
-	<free-tag >默认标签</free-tag>
-	<free-tag radius="10rpx">默认标签</free-tag>
-	<free-tag radius="30rpx">默认标签</free-tag>
+	  <free-list-grid list="{{gridList}}" radius="500" height="100" width="100"></free-list-grid>
 ```
 
-**标签主题**
+**可滑动金刚区**
 
-`effect`属性用来表示标签主题，默认`dark`，可选`dark`/`light`/`plain`
+`isSwiper`表示是否可滑动，默认为`false`；`swiperHeight`为滑动容器的高度，默认为`400rpx`，需在可滑动`isSwiper==true`下使用
 ```html
-	<free-tag effect="dark">默认标签</free-tag>
-	<free-tag effect="light">默认标签</free-tag>
-	<free-tag effect="plain">默认标签</free-tag>
+	  <free-list-grid list="{{gridList}}" ></free-list-grid>
+	  <free-list-grid list="{{gridList}}" isSwiper></free-list-grid>
+	  <free-list-grid list="{{gridList}}" isSwiper swiperHeight="400"></free-list-grid>
 ```
-
-**标签图标**
-
-`icon`属性用来给标签加图标，`iconColor`表示图标的颜色，可选图标为内置图标
-```html
-	<free-tag icon="home">默认标签</free-tag>
-	<free-tag icon="home" iconColor="#000">默认标签</free-tag>
-```
-
 **Props**
 
 | 参数     | 说明                                                   | 类型          | 默认值      | 可选值 |
 | -------- | ------------------------------------------------------ | ------------- | ----------- | ------ |
-| type   | 标签的颜色                                               | String        | -      | 见下表      |
-| radius      | 标签圆角                                           | String        | 5000rpx           | -      |
-| padding   |  标签内边距                | String         | -           | -      |
-| shadow     | 标签阴影                                   | Boolean        | true | - |
-| size    | 标签大小                                              | String        | -      | sm      |
-| effect   | 标签主题| String        | dark      | dark/light/plain      |
-| icon   | 图标名字                                               | String        | -      | 内置icon图标      |
-| iconColor   | 图标颜色                                               | String        | #fff      | -      |
+| list   | 数组 = [{name：名字 number：角标 image：图片 width：图片宽 height：图片高 color：角标背景}] | Array        | []      | -      |
+| col   | 列数                                               | [Number,String]        | 4      | -      |
+| row   | 行数                                               | [Number,String]        | 2      | -      |
+| border      | 边框                         | Boolean       | false           | -      |
+| bgColor   |  背景色                | String         | -#fff          | -      |
+| width     | 图片默认宽，rpx                                 | String        | 60 | - |
+| height     | 图片默认高，rpx             | String        | 60 | - |
+| radius     | 图片圆角                                   | [Number,String]        | 10 |- |
+| isSwiper    | 是否可滑动，可做金刚区                                    | String        | 28rpx 30rpx      |       |
+| swiperHeight   | 滑动容器的高度，需搭配isSwiper使用| [Number,String]       | 400     | -     |
+                     |             
 
-**type的取值**
+**Events**
 
-| 参数         | 默认值                                                      | 值                                                      |
-| ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 嫣红  | red | #e54d42 |
-| 桔橙    | orange | #f37b1d |
-| 明黄   | yellow | #fbbd08 |
-| 橄榄     | olive | #8dc63f |
-| 森绿    | green | #39b54a |
-| 天青          | cyan | #1cbbb4 |
-| 海蓝       | blue | #0081ff |
-| 姹紫       | purple | #6739b6 |
-| 木槿         | mauve | #9c26b0 |
-| 桃粉        | pink | #e03997 |
-| 棕褐     | brown | #a5673f |
-| 玄灰    | grey | #8799a3 |
-| 草灰  | gray | #aaaaaa |
-| 墨黑 | black | #333333 |
-| 雅白 | white | #ffffff |
+| 事件名称     | 说明                                                   | 回调参数      |
+| -------- | ------------------------------------------------------ | ------------- |
+| click      | 点击触发                          | {index:index索引}  |                
 
 #### 预览
 
