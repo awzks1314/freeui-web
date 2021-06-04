@@ -32,8 +32,8 @@
 	* [ReadMore 阅读更多](./docs/module/阅读更多.md)
 * 导航组件
 	* [NavBar 导航栏](./docs/module/导航栏.md)
-	* [Tabs 表单](./docs/module/标签页.md)
-	* [Tabbar 自定义](./docs/module/自定义.md)
+	* [Tabs 标签页](./docs/module/标签页.md)
+	* [Tabbar 底部导航](./docs/module/自定义.md)
 	* [Footer 页脚](./docs/module/页脚.md)
 * 反馈组件
 	* [Subsection 分段器](./docs/module/分段器.md)
