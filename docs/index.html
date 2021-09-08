@@ -69,7 +69,18 @@
 		  crossChapterText: true,
 		},
       plugins: [
-		  
+		  function(hook) {
+        var footer = [
+          '<hr/>',
+          '<footer>',
+          '<span>「<a href="https://webify.cloudbase.net/" target="_blank">CloudBase Webify</a>提供网站托管服务」</span>',
+          '</footer>'
+        ].join('');
+
+        hook.afterEach(function(html) {
+          return html + footer;
+        });
+      }
 	  ]
     }
   </script>
